@@ -3,75 +3,405 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>José Anibal González Cubilette | Portafolio Profesional</title>
+    <title>José Anibal González Cubilette | Ingeniero en Ciberseguridad & IA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        body { scroll-behavior: smooth; }
+        .fade-in { animation: fadeIn 0.8s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hover-lift { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.15); }
+        .profile-img { width: 280px; height: 280px; border-radius: 50%; border: 4px solid #10b981; object-fit: cover; }
+        .btn-primary { background: linear-gradient(135deg, #10b981 0%, #059669 100%); transition: all 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); }
+        .btn-secondary { border: 2px solid #10b981; color: #10b981; transition: all 0.3s ease; }
+        .btn-secondary:hover { background: #10b981; color: white; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-white text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold text-slate-900">JAG</a>
+            <div class="hidden md:flex gap-8">
+                <a href="#proyectos" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition">Proyectos</a>
+                <a href="#certificaciones" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition">Certificaciones</a>
+                <a href="#roadmap" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition">Roadmap</a>
+                <a href="#contacto" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition">Contacto</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg text-white min-h-screen flex items-center">
-        <div class="max-w-5xl mx-auto px-6 py-24 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">José Anibal González Cubilette</h1>
-            <p class="text-xl md:text-2xl text-slate-300 mb-8">
-                Ingeniero en Ciberseguridad e IA • UNICARIBE
+    <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white pt-20">
+        <div class="max-w-4xl mx-auto px-6 py-24 text-center fade-in">
+            <div class="mb-8 flex justify-center">
+                <img src="https://via.placeholder.com/280x280/1e2937/ffffff?text=JA" alt="José Anibal González" class="profile-img">
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4">
+                José Anibal González Cubilette
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-emerald-400 font-semibold mb-3">
+                Ingeniero en Ciberseguridad • UNICARIBE
             </p>
-            <p class="max-w-xl mx-auto text-base text-slate-400 leading-relaxed mb-8">
-                Desarrollador enfocado en soluciones de Inteligencia Artificial, automatización inteligente y seguridad cibernética.
+            
+            <p class="max-w-2xl mx-auto text-base md:text-lg text-slate-300 leading-relaxed mb-12">
+                Especializado en Inteligencia Artificial, Automatización Inteligente y Seguridad Cibernética. Desarrollador comprometido con soluciones innovadoras y transformación digital.
             </p>
-            <div class="flex gap-4 justify-center">
-                <a href="https://github.com/jagonzalezcubilette" target="_blank" class="bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold inline-flex items-center gap-2">
-                    <i class="fab fa-github"></i> Mi GitHub
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#proyectos" class="btn-primary px-8 py-3 rounded-lg font-semibold text-white inline-flex items-center justify-center gap-2">
+                    <i class="fas fa-code"></i> Ver Proyectos
+                </a>
+                <a href="https://github.com/jagonzalezcubilette" target="_blank" class="btn-secondary px-8 py-3 rounded-lg font-semibold inline-flex items-center justify-center gap-2">
+                    <i class="fab fa-github"></i> GitHub
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Evidencia -->
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-semibold mb-4">Evidencia Académica</h2>
-            <p class="text-slate-600">Estudiante Activo de Ingeniería en Ciberseguridad y área de Inteligencia Artificial en la Universidad del Caribe (UNICARIBE).</p>
-        </div>
-    </section>
+    <!-- Certificaciones Section -->
+    <section id="certificaciones" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Certificaciones</h2>
+                <p class="text-slate-600 text-lg">Formación continua en tecnología, seguridad y desarrollo profesional</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Cert 1 -->
+                <div class="hover-lift bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-emerald-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-slate-900 text-sm md:text-base">Competencias Digitales</h3>
+                            <p class="text-xs text-slate-600 mt-1">Herramientas de Ofimática (Word, Excel, PowerPoint)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Universitat Autònoma de Barcelona</p>
+                    <p class="text-xs font-medium text-emerald-600 mb-3">27 de enero de 2026</p>
+                    <a href="#" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition">Verificar →</a>
+                </div>
 
-    <!-- Proyectos -->
-    <section class="py-16 bg-slate-900 text-white">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-semibold mb-12 text-center">Ecosistema de Proyectos Activos</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-800 p-6 rounded-2xl border-t-4 border-emerald-400">
-                    <h3 class="text-xl font-bold mb-2">Sentinel AI</h3>
-                    <p class="text-slate-400 text-sm mb-4">Agente automatizado para monitoreo de amenazas e informes de seguridad.</p>
-                    <a href="https://github.com/jagonzalezcubilette/sentinel-ai" target="_blank" class="text-emerald-400 text-sm font-medium">Ver Código →</a>
+                <!-- Cert 2 -->
+                <div class="hover-lift bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-emerald-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-slate-900 text-sm md:text-base">Administración de TI</h3>
+                            <p class="text-xs text-slate-600 mt-1">Tecnologías de la Información</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Universidad de Palermo</p>
+                    <p class="text-xs font-medium text-emerald-600 mb-3">15 de enero de 2026</p>
+                    <a href="#" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition">Verificar →</a>
                 </div>
-                <div class="bg-slate-800 p-6 rounded-2xl border-t-4 border-violet-400">
-                    <h3 class="text-xl font-bold mb-2">Nova Marketing Bot</h3>
-                    <p class="text-slate-400 text-sm mb-4">Plataforma de optimización de contenidos y automatización (Caso: Radiant Wellness Center).</p>
-                    <a href="https://github.com/jagonzalezcubilette/nova-marketing-bot" target="_blank" class="text-violet-400 text-sm font-medium">Ver Código →</a>
+
+                <!-- Cert 3 -->
+                <div class="hover-lift bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-emerald-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-slate-900 text-sm md:text-base">Introduction to HTML5</h3>
+                            <p class="text-xs text-slate-600 mt-1">Desarrollo Web Frontend</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">University of Michigan</p>
+                    <p class="text-xs font-medium text-emerald-600 mb-3">29 de abril de 2026</p>
+                    <a href="#" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition">Verificar →</a>
                 </div>
-                <div class="bg-slate-800 p-6 rounded-2xl border-t-4 border-amber-400">
-                    <h3 class="text-xl font-bold mb-2">Hermes Analysis Bot</h3>
-                    <p class="text-slate-400 text-sm mb-4">Agente de investigación académica y simulación para análisis de datos financieros.</p>
-                    <a href="https://github.com/jagonzalezcubilette/hermes-analysis-bot" target="_blank" class="text-amber-400 text-sm font-medium">Ver Código →</a>
+
+                <!-- Cert 4 -->
+                <div class="hover-lift bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-emerald-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-slate-900 text-sm md:text-base">Coding Interview Preparation</h3>
+                            <p class="text-xs text-slate-600 mt-1">Algoritmos y Estructuras de Datos</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Meta</p>
+                    <p class="text-xs font-medium text-emerald-600 mb-3">28 de abril de 2026</p>
+                    <a href="#" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition">Verificar →</a>
+                </div>
+
+                <!-- Cert 5 -->
+                <div class="hover-lift bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-emerald-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-slate-900 text-sm md:text-base">Introducción al Desarrollo de Software</h3>
+                            <p class="text-xs text-slate-600 mt-1">Ciclo de Vida del Software</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Pontificia Universidad Católica del Perú</p>
+                    <p class="text-xs font-medium text-emerald-600 mb-3">07 de abril de 2026</p>
+                    <a href="#" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition">Verificar →</a>
+                </div>
+
+                <!-- Cert 6 -->
+                <div class="hover-lift bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-emerald-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-slate-900 text-sm md:text-base">Gmail</h3>
+                            <p class="text-xs text-slate-600 mt-1">Herramientas de Productividad Google</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Google Cloud</p>
+                    <p class="text-xs font-medium text-emerald-600 mb-3">11 de enero de 2026</p>
+                    <a href="#" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition">Verificar →</a>
+                </div>
+
+                <!-- Cert 7 -->
+                <div class="hover-lift bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-emerald-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-slate-900 text-sm md:text-base">Project Management con Canva</h3>
+                            <p class="text-xs text-slate-600 mt-1">Gestión de Proyectos y Equipos</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Canva</p>
+                    <p class="text-xs font-medium text-emerald-600 mb-3">11 de enero de 2026</p>
+                    <a href="#" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition">Verificar →</a>
+                </div>
+
+                <!-- Cert 8 -->
+                <div class="hover-lift bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-emerald-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-slate-900 text-sm md:text-base">Trabajo en Equipo con Canva</h3>
+                            <p class="text-xs text-slate-600 mt-1">Colaboración Digital y Diseño</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Canva</p>
+                    <p class="text-xs font-medium text-emerald-600 mb-3">11 de enero de 2026</p>
+                    <a href="#" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition">Verificar →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Disclaimer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 text-center text-sm">
-        <div class="max-w-2xl mx-auto px-6">
-            <p class="font-semibold text-white mb-2">Disclaimer Legal</p>
-            <p>Los proyectos presentados forman parte de un portafolio exclusivamente académico y de investigación de software personal. No constituyen actividades comerciales vigentes ni empresas reguladas.</p>
-            <p class="mt-6 text-xs">© 2026 José Anibal González Cubilette</p>
+    <!-- Evidencia Académica -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Evidencia Académica</h2>
+                <p class="text-slate-600 text-lg">Formación en Ingeniería de Ciberseguridad</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-12">
+                <div class="flex items-center gap-6 mb-6">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-university text-emerald-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">UNICARIBE</h3>
+                        <p class="text-slate-600">Universidad del Caribe</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div>
+                        <p class="text-lg font-semibold text-slate-900">Carrera</p>
+                        <p class="text-slate-600">Ingeniería en Ciberseguridad</p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-slate-900">Enfoque Actual</p>
+                        <p class="text-slate-600">Automatización mediante Agentes de IA, Optimización del Aprendizaje y Mitigación de Riesgos en Infraestructura Cloud</p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-slate-900">Estado</p>
+                        <p class="text-emerald-600 font-semibold">Estudiante Activo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Activos -->
+    <section id="proyectos" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Proyectos Activos</h2>
+                <p class="text-slate-600 text-lg">Soluciones innovadoras en IA, automatización y seguridad</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Sentinel AI -->
+                <div class="hover-lift bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl border border-slate-200 p-8 flex flex-col">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Sentinel AI</h3>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">Sistema automatizado de monitoreo de seguridad, detección de amenazas y análisis de datos en tiempo real con procesamiento de lenguaje natural.</p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <a href="https://github.com/jagonzalezcubilette/sentinel-ai" target="_blank" class="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition">
+                            <i class="fab fa-github"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nova Marketing Bot -->
+                <div class="hover-lift bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl border border-slate-200 p-8 flex flex-col">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Nova Marketing Bot</h3>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">Plataforma de optimización de contenidos y automatización de flujos de trabajo para clínicas de bienestar. Caso de uso activo: Radiant Wellness Center.</p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <a href="https://github.com/jagonzalezcubilette/nova-marketing-bot" target="_blank" class="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition">
+                            <i class="fab fa-github"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hermes Analysis Bot -->
+                <div class="hover-lift bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl border border-slate-200 p-8 flex flex-col">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-flask text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Hermes Analysis Bot</h3>
+                    <p class="text-slate-600 text-sm mb-6 flex-grow">Agente de investigación académica para análisis cuantitativo, simulación educativa y modelado financiero en Python.</p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <a href="https://github.com/jagonzalezcubilette/hermes-analysis-bot" target="_blank" class="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition">
+                            <i class="fab fa-github"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Profesional -->
+    <section id="roadmap" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Roadmap Profesional</h2>
+                <p class="text-slate-600 text-lg">Plan de desarrollo 2026-2027</p>
+            </div>
+            
+            <div class="space-y-6 max-w-3xl mx-auto">
+                <!-- Q3 2026 -->
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-lg">Q3</div>
+                        <div class="w-1 h-20 bg-emerald-200 mt-2"></div>
+                    </div>
+                    <div class="pb-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">2026 • Tercer Trimestre</h3>
+                        <p class="text-slate-600">Finalización del ciclo académico actual en UNICARIBE y certificación avanzada en arquitecturas de IA seguras.</p>
+                    </div>
+                </div>
+
+                <!-- Q4 2026 -->
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-lg">Q4</div>
+                        <div class="w-1 h-20 bg-emerald-200 mt-2"></div>
+                    </div>
+                    <div class="pb-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">2026 • Cuarto Trimestre</h3>
+                        <p class="text-slate-600">Implementación del prototipo NOVA en 2 entornos locales adicionales para validación de métricas de rendimiento.</p>
+                    </div>
+                </div>
+
+                <!-- Q1 2027 -->
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-lg">Q1</div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">2027 • Primer Trimestre</h3>
+                        <p class="text-slate-600">Desarrollo de módulos de cumplimiento normativo de protección de datos dentro de los agentes de automatización.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Contacto Profesional</h2>
+            <p class="text-slate-600 text-lg mb-12">Conecta conmigo para colaboraciones, consultoría o consultas</p>
+            
+            <div class="flex flex-col md:flex-row gap-6 justify-center mb-12">
+                <a href="mailto:joseanibalgonzalezcubilette@gmail.com" class="btn-primary px-8 py-3 rounded-lg font-semibold text-white inline-flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://github.com/jagonzalezcubilette" target="_blank" class="btn-secondary px-8 py-3 rounded-lg font-semibold inline-flex items-center justify-center gap-2">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-8 border border-slate-200">
+                <p class="text-slate-700 font-semibold">📧 joseanibalgonzalezcubilette@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Legal -->
+    <footer class="bg-slate-900 text-slate-300 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-12 pb-12 border-b border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-4">Disclaimer Legal</h3>
+                <p class="text-sm leading-relaxed mb-4">
+                    Los proyectos presentados en este portafolio forman parte exclusivamente de un ecosistema académico y de investigación de software personal. No constituyen actividades comerciales vigentes, ni empresas reguladas, ni prestación formal de servicios profesionales.
+                </p>
+                <p class="text-sm leading-relaxed">
+                    Este portafolio refleja un compromiso firme con la transparencia, la educación continua, el desarrollo de software legítimo y las prácticas éticas en ciberseguridad e inteligencia artificial. Todos los proyectos se desarrollan dentro de marcos normativos y académicos apropiados.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>© 2026 José Anibal González Cubilette. Todos los derechos reservados.</p>
+                <p>Última actualización: Junio 2026</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110 z-40" style="opacity: 0; pointer-events: none;" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.scrollY > 300) {
+                scrollTop.style.opacity = '1';
+                scrollTop.style.pointerEvents = 'auto';
+            } else {
+                scrollTop.style.opacity = '0';
+                scrollTop.style.pointerEvents = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>
