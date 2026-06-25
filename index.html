@@ -120,20 +120,53 @@
             color: white;
         }
 
-        /* ===== PROFILE IMAGE ===== */
-        .profile-image {
-            width: 280px;
-            height: 280px;
+        /* ===== PROFILE IMAGE CONTAINER ===== */
+        .profile-container {
+            width: 256px;
+            height: 256px;
             border-radius: 50%;
-            border: 4px solid #10b981;
+            border: 8px solid #10b981;
+            overflow: hidden;
+            background: #27272a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 50px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+            margin: 0 auto;
+        }
+
+        .profile-container:hover {
+            box-shadow: 0 0 60px rgba(16, 185, 129, 0.5);
+            transform: scale(1.05);
+        }
+
+        .profile-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            display: block;
+        }
+
+        /* ===== PROFILE IMAGE FALLBACK ===== */
+        .profile-fallback {
+            width: 256px;
+            height: 256px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
             box-shadow: 0 0 50px rgba(16, 185, 129, 0.3);
             transition: all 0.3s ease;
         }
 
-        .profile-image:hover {
+        .profile-fallback:hover {
             box-shadow: 0 0 60px rgba(16, 185, 129, 0.5);
-            transform: scale(1.02);
+            transform: scale(1.05);
         }
 
         /* ===== GRADIENT TEXT ===== */
@@ -175,10 +208,16 @@
                 font-size: 2rem;
             }
 
-            .profile-image {
-                width: 240px;
-                height: 240px;
-                border: 3px solid #10b981;
+            .profile-container {
+                width: 224px;
+                height: 224px;
+                border: 6px solid #10b981;
+            }
+
+            .profile-fallback {
+                width: 224px;
+                height: 224px;
+                font-size: 3rem;
             }
 
             h1 {
@@ -218,9 +257,13 @@
         <div class="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl opacity-20"></div>
 
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            <!-- Profile Picture -->
+            <!-- Profile Picture - Enhanced Version -->
             <div class="mb-12 animate-fade-in-up">
-                <img src="https://via.placeholder.com/280x280/1e2937/10b981?text=JAG" alt="José Anibal González Cubilette" class="profile-image mx-auto">
+                <div class="profile-container">
+                    <img src="https://jagonzalezcubilette.github.io/foto-perfil.jpg" 
+                         alt="José Anibal González Cubilette" 
+                         onerror="this.parentElement.innerHTML='<div class=\"profile-fallback\">JAG</div>'">
+                </div>
             </div>
 
             <!-- Main Heading -->
@@ -676,9 +719,6 @@
             el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             observer.observe(el);
         });
-
-        // Mobile Menu Toggle (if needed for future enhancement)
-        // Add mobile menu functionality here if required
     </script>
 
 </body>
